@@ -38,7 +38,5 @@ export class Tab1Page {
 
   }
 
-  ver(){
-    console.log("HOLA");
-  }
+
 }
