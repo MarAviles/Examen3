@@ -1,30 +1,39 @@
 
-<h2>Busca la universidad</h2>
+<div>
+    <h2 id="header">Universidades</h2>
+</div>
 
-<form [formGroup]="buscador" (ngSubmit)="buscar()">
-    <label>Busca el país</label>
-    <input type="text" formControlName="country" value="Argentina">
-    <button type="submit">Buscar</button>
-</form>
+<div>
+    <div>
+        <form id="buscador" [formGroup]="buscador" (ngSubmit)="buscar()">
+            <label>Busca un país: </label>
+            <input type="text" formControlName="country" value="Argentina">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+    
+    <!--Tabla de universidad-->
+    <p *ngIf="mensaje">Resultado inexistente, porfavor ingresa otro</p>
 
-<!--Tabla de universidad-->
-<p *ngIf="mensaje">Resultado inexistente, porfavor ingresa otro</p>
-<div *ngIf="status">
-    <h2 >Universidades de {{universidad.country}} {{universidad.alpha_two_code}}</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Página web</th>
-                <th>Dominios</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let uni of universidades">
-                <td>{{uni.name}} </td>
-                <td>{{uni.web_pages}}</td>
-                <td>{{uni.domains}}</td>
-            </tr>
-        </tbody>
-    </table>
+
+    <div *ngIf="status">
+        <h2 id="titulo">Universidades de {{universidad.country}} {{universidad.alpha_two_code}}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Página web</th>
+                    <th>Dominios</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let uni of universidades">
+                    <td>{{uni.name}} </td>
+                    <td>{{uni.web_pages}}</td>
+                    <td>{{uni.domains}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>

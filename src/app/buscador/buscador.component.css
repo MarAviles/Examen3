@@ -1,0 +1,55 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#header {
+    margin: 0px;
+    background-color: rgb(17, 35, 68);
+    color: white;
+    margin-bottom: 30px;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#buscador {
+    margin-left: 60px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input {
+    border: none;
+    border: 1px solid rgb(15, 15, 19);
+    border-radius: 10px;
+    height: 25px;
+}
+
+button {
+    border: 1px solid black;
+    background-color: rgb(180, 180, 255);
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+table {
+    border: 1px solid black;
+}
+
+button:hover {
+    background-color: rgb(17, 35, 68);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#titulo {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+table {
+    margin: 0px auto;
+}
