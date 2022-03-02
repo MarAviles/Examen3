@@ -16,7 +16,8 @@ export class BuscadorComponent implements OnInit {
 
   universidades: University[] = [];
   universidad: University = {} as University;
-  status = false;
+  status = true;
+  mensaje = false;
 
   constructor(private FormBuilder: FormBuilder, private UnivService: UniversityService) { }
 
@@ -25,11 +26,22 @@ export class BuscadorComponent implements OnInit {
   }
 
   buscar(){
+
     let country: string = this.buscador.get('country')?.value;
 
     this.UnivService.buscarUniversidad(country).subscribe((res:any)=>{
-      this.universidades = res;
-      this.universidad = this.universidades[0];
+      if(res != ""){
+        this.mensaje = false;
+        this.status = true;
+        this.universidades = res;
+        this.universidad = this.universidades[0];
+      }else{
+        this.status = false;
+        this.mensaje = true;
+      }
+      
+
+    },(error)=>{
 
     });
   }

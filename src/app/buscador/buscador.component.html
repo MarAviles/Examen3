@@ -8,8 +8,9 @@
 </form>
 
 <!--Tabla de universidad-->
-<div>
-    <h2>Universidades de {{universidad.country}} {{universidad.alpha_two_code}}</h2>
+<p *ngIf="mensaje">Resultado inexistente, porfavor ingresa otro</p>
+<div *ngIf="status">
+    <h2 >Universidades de {{universidad.country}} {{universidad.alpha_two_code}}</h2>
     <table>
         <thead>
             <tr>
