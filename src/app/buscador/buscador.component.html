@@ -1,0 +1,29 @@
+
+<h2>Busca la universidad</h2>
+
+<form [formGroup]="buscador" (ngSubmit)="buscar()">
+    <label>Busca el país</label>
+    <input type="text" formControlName="country" value="Argentina">
+    <button type="submit">Buscar</button>
+</form>
+
+<!--Tabla de universidad-->
+<div>
+    <h2>Universidades de {{universidad.country}} {{universidad.alpha_two_code}}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Página web</th>
+                <th>Dominios</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let uni of universidades">
+                <td>{{uni.name}} </td>
+                <td>{{uni.web_pages}}</td>
+                <td>{{uni.domains}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
